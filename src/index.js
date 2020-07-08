@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+// import App from './App';
+import StoreFront from './components/StoreFront';
 import * as serviceWorker from './serviceWorker';
+import './css/style.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <StoreFront />,
   document.getElementById('root')
 );
 
