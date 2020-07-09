@@ -3,15 +3,16 @@ import React from 'react';
 class StoreFront extends React.Component {
   render() {
     return (
-      <div>
+      <div className="storefront">
         <div>
-          <img src="/images/logo.png" alt="Ghost"/>
+          <img src="/images/logo.png" alt="Ghost" className="mainghost" />
         </div>
-        <form>
+        <form className="storefrontform">
           <h2>Please Enter A Store</h2>
-          <input type="text"
+          <input className="storename"
+          type="text"
           required placeholder="Store Name" />
-          <button type="submit">Visit Store</button>
+          <button  className="visitstore" type="submit">Visit Store</button>
         </form>
       </div>
     );
