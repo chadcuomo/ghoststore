@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './App';
+import App from './components/App';
 import StoreFront from './components/StoreFront';
 import * as serviceWorker from './serviceWorker';
 import './css/style.css';
 
 ReactDOM.render(
-  <StoreFront />,
+  <App />,
   document.getElementById('root')
 );
 

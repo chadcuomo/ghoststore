@@ -93,14 +93,58 @@ h2 {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
+
 .visitstore:hover,
 .visitstore:focus,
 .visitstore:active {
   color: black;
 }
+
 .visitstore:hover:before,
 .visitstore:focus:before,
 .visitstore:active:before {
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
+}
+
+/*NAV*/
+
+.nav {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.emptynav {
+  width: 25%;
+}
+
+.navlogo {
+  margin: auto;
+}
+
+.navimg {
+  margin-left: auto;
+}
+
+.smallghost {
+  width: 170px;
+}
+
+.navbutton {
+  margin-top: 10px;
+  padding: 10px;
+  height: 35px;
+  width: 35px;
+}
+
+/* Hero */
+
+.hero {
+  width: 100%;
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+  margin-top: 20px;
 }
