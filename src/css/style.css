@@ -140,11 +140,16 @@ h2 {
   width: 35px;
 }
 
-/* Hero */
+/* Hero / Header */
 
 .hero {
   width: 100%;
-  border-top: 4px solid white;
-  border-bottom: 4px solid white;
+  border-top: 6px solid white;
+  border-bottom: 6px solid white;
   margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.shopheader {
+  text-align: center;
 }
