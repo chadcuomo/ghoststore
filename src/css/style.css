@@ -153,3 +153,32 @@ h2 {
 .shopheader {
   text-align: center;
 }
+
+/* Small Product Component */
+.products-container {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.small-product-outer {
+  width: 425px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.small-product-inner {
+  background-color: white;
+  color: black;
+}
+
+.small-img-container {
+  text-align: center;
+}
+
+.small-prod-img {
+  width: 375px;
+}
