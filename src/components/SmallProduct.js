@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatPrice } from '../helpers'
 
 class SmallProduct extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class SmallProduct extends React.Component {
             </div>
             <div className="sub-info">
               <p className="small-prod-subtitle">Pre-Workout</p>
-              <p className="small-price">{price}</p>
+              <p className="small-price">{formatPrice(price)}</p>
             </div>
             <div className="small-btn-container">
               <button className="add-cart">Add To Cart</button>

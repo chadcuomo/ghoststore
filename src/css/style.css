@@ -166,7 +166,7 @@ h2 {
 }
 
 .small-product-outer {
-  width: 425px;
+  width: 375px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
@@ -188,7 +188,8 @@ h2 {
 }
 
 .small-prod-img {
-  width: 375px;
+  width: 100%;
+  text-align: center;
 }
 
 .small-prod-title {
