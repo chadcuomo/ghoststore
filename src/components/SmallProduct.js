@@ -23,7 +23,8 @@ class SmallProduct extends React.Component {
             </div>
             <div className="small-btn-container">
               <button className="add-cart">Add To Cart</button>
-              <button className="details">Details</button>
+              <button className="details"
+              onClick={() =>this.props.openModal() }>Details</button>
             </div>
           </div>
         </div>

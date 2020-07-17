@@ -25,7 +25,8 @@ class LargeProduct extends React.Component {
          </div>
          <div className="large-product-close-container">
            <div className="close-button-container">
-            <button className="close add-cart">Close</button>
+            <button className="close add-cart"
+            onClick={() =>this.props.closeModal() }>Close</button>
            </div>
          </div>
        </div>
