@@ -10,7 +10,8 @@ import Modal from 'react-modal';
 class App extends React.Component {
   state = {
     products: {},
-    isOpen: false
+    isOpen: false,
+    largeProduct : {},
   };
 
   loadSampleProducts = () => {
@@ -21,23 +22,38 @@ class App extends React.Component {
     this.loadSampleProducts();
   }
 
-  openModal = () => {
+  openModal = (key) => {
+    const largeProduct = { ...this.state.largeProduct };
+    largeProduct[key] = key;
+    this.setState({ largeProduct });
     let isOpen = { ...this.state.isOpen };
     isOpen = true;
     this.setState({ isOpen });
+    console.log(largeProduct);
   }
 
-  closeModal = () => {
+  closeModal = (key) => {
+    const largeProduct = { ...this.state.largeProduct };
+    delete largeProduct[key];
+    this.setState({ largeProduct })
     let isOpen = { ...this.state.isOpen };
     isOpen = false;
     this.setState({ isOpen });
+    console.log(largeProduct);
   }
 
   render() {
     return (
       <div className="main-container">
         <Modal isOpen={this.state.isOpen}>
-          <LargeProduct closeModal={this.closeModal} />
+        {Object.keys(this.state.largeProduct).map(key =>
+              <LargeProduct
+              key={key}
+              index={key}
+              details={this.state.products[key]}
+              closeModal={this.closeModal}
+              />
+              )}
         </Modal >
         <Nav />
         <div>

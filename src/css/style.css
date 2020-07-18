@@ -399,6 +399,13 @@ h4 {
   width: 100px;
 }
 
+/* Modal */
+
+.modal {
+  max-width: 1000px;
+}
+
+
 @media screen and (max-width: 850px) {
   .hero {
     content: url("/images/Ghost-Hero-image-small.jpg");
@@ -428,6 +435,15 @@ h4 {
     text-align: center;
     margin-top: -95px;
   }
+}
+
+
+.large-price {
+  color: black;
+}
+
+.large-add-button-div {
+  margin-top: -20px;
 }
 
 @media screen and (max-width: 640px) {
