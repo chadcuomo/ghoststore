@@ -403,8 +403,29 @@ h4 {
 
 .modal {
   max-width: 1000px;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  padding: 25px;
+  height: 100vh;
+  overflow: scroll;
 }
 
+.modal:focus {
+  outline: none;
+}
+
+/* Cart */
+
+.cart-container {
+  background-color: white;
+  color: black;
+  width: 25%;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+}
 
 @media screen and (max-width: 850px) {
   .hero {

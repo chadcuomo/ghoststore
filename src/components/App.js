@@ -3,9 +3,11 @@ import Nav from './Nav';
 import sampleProducts from '../sample-products';
 import SmallProduct from'./SmallProduct';
 import LargeProduct from './LargeProduct';
+import Cart from './Cart';
 import Modal from 'react-modal';
 
 
+Modal.setAppElement('#root');
 
 class App extends React.Component {
   state = {
@@ -29,7 +31,6 @@ class App extends React.Component {
     let isOpen = { ...this.state.isOpen };
     isOpen = true;
     this.setState({ isOpen });
-    console.log(largeProduct);
   }
 
   closeModal = (key) => {
@@ -39,13 +40,13 @@ class App extends React.Component {
     let isOpen = { ...this.state.isOpen };
     isOpen = false;
     this.setState({ isOpen });
-    console.log(largeProduct);
   }
 
   render() {
     return (
       <div className="main-container">
-        <Modal isOpen={this.state.isOpen}>
+        <Cart />
+        <Modal className="modal" isOpen={this.state.isOpen}>
         {Object.keys(this.state.largeProduct).map(key =>
               <LargeProduct
               key={key}
