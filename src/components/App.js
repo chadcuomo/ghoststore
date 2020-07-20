@@ -14,6 +14,7 @@ class App extends React.Component {
     products: {},
     isOpen: false,
     largeProduct : {},
+    order: {}
   };
 
   loadSampleProducts = () => {
@@ -22,7 +23,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.loadSampleProducts();
-  }
+  };
 
   openModal = (key) => {
     const largeProduct = { ...this.state.largeProduct };
@@ -31,7 +32,7 @@ class App extends React.Component {
     let isOpen = { ...this.state.isOpen };
     isOpen = true;
     this.setState({ isOpen });
-  }
+  };
 
   closeModal = (key) => {
     const largeProduct = { ...this.state.largeProduct };
@@ -40,12 +41,36 @@ class App extends React.Component {
     let isOpen = { ...this.state.isOpen };
     isOpen = false;
     this.setState({ isOpen });
-  }
+  };
+
+  addToOrder = (key) => {
+    const cart = document.querySelector('.cart-container');
+    const order = { ...this.state.order };
+    order[key] = order[key] + 1 || 1;
+    this.setState({ order });
+    cart.classList.remove('closed');
+  };
+
+  deleteFromOrder = (key) => {
+    const order = { ...this.state.order };
+    delete order[key];
+    this.setState({ order });
+  };
+
+  closeCart = () => {
+    const cart = document.querySelector('.cart-container');
+    cart.classList.add('closed');
+  };
 
   render() {
     return (
       <div className="main-container">
-        <Cart />
+        <Cart
+        products={this.state.products}
+        order={this.state.order}
+        deleteFromOrder={this.deleteFromOrder} 
+        closeCart={this.closeCart}
+        />
         <Modal className="modal" isOpen={this.state.isOpen}>
         {Object.keys(this.state.largeProduct).map(key =>
               <LargeProduct
@@ -53,6 +78,7 @@ class App extends React.Component {
               index={key}
               details={this.state.products[key]}
               closeModal={this.closeModal}
+              addToOrder={this.addToOrder}
               />
               )}
         </Modal >
@@ -71,6 +97,7 @@ class App extends React.Component {
               index={key}
               details={this.state.products[key]}
               openModal={this.openModal}
+              addToOrder={this.addToOrder}
               />
               )}
           </div>

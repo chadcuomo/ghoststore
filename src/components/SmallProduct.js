@@ -4,6 +4,7 @@ import { formatPrice } from '../helpers'
 class SmallProduct extends React.Component {
   render() {
     const { image, name, price, status } = this.props.details;
+    const isAvailable = status === 'available';
     return (
       <div className="small-product-outer">
         <div className="small-product-inner">
@@ -22,7 +23,11 @@ class SmallProduct extends React.Component {
               <p className="small-price">{formatPrice(price)}</p>
             </div>
             <div className="small-btn-container">
-              <button className="add-cart">Add To Cart</button>
+              <button className="add-cart"
+              disabled={!isAvailable}
+              onClick={() => this.props.addToOrder(this.props.index)}>
+                {isAvailable ? 'Add To Cart' : 'Sold Out'}
+              </button>
               <button className="details"
               onClick={() =>this.props.openModal(this.props.index) }>Details</button>
             </div>

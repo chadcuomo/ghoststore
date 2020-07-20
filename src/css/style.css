@@ -352,7 +352,6 @@ h3 {
 }
 
 .large-product-inner {
-
   display: flex;
   flex-wrap: wrap;
   padding: 40px;
@@ -427,6 +426,10 @@ h4 {
   z-index: 1;
 }
 
+.closed {
+  transform: translateX(120%);
+}
+
 @media screen and (max-width: 850px) {
   .hero {
     content: url("/images/Ghost-Hero-image-small.jpg");
@@ -458,7 +461,6 @@ h4 {
   }
 }
 
-
 .large-price {
   color: black;
 }
@@ -468,7 +470,6 @@ h4 {
 }
 
 @media screen and (max-width: 640px) {
-
   /* large Product */
   .description {
     font-size: 20px;
