@@ -13,7 +13,8 @@ class Nav extends React.Component {
           type="image" 
           alt="cart" 
           className="navbutton" 
-          src="/images/shopping-cart.png" 
+          src="/images/shopping-cart.png"
+          onClick={() => this.props.openCart()} 
           />
           <input 
           type="image" 

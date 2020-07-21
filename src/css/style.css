@@ -417,6 +417,9 @@ h4 {
 /* Cart */
 
 .cart-container {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
   background-color: white;
   color: black;
   width: 25%;
@@ -424,13 +427,60 @@ h4 {
   position: fixed;
   right: 0;
   z-index: 1;
+  padding-left: 10px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: -3px 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.close-cart {
+  height: 100vh;
+  width: 25px;
+  margin-right: 10px;
+  margin-left: -5px;
+  background: white;
+  font-family: "Anton", sans-serif;
+  color: black;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 5px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.close-cart:hover {
+  color: white;
+  background: black;
+}
+
+.product-price {
+  padding-top: 10px;
+}
+
+.delete {
+  width: 25px;
+  margin-left: 10px;
 }
 
 .closed {
+  transition-timing-function: ease-out;
+  transition: 1s;
   transform: translateX(120%);
 }
 
-@media screen and (max-width: 850px) {
+
+@media screen and (max-width: 1190px) {
+
+  /*Cart*/
+  .cart-container {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 855px) {
   .hero {
     content: url("/images/Ghost-Hero-image-small.jpg");
   }
@@ -459,6 +509,11 @@ h4 {
     text-align: center;
     margin-top: -95px;
   }
+
+  /*Cart*/
+  .cart-container {
+    width: 40%;
+  }
 }
 
 .large-price {
@@ -469,9 +524,23 @@ h4 {
   margin-top: -20px;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 750px) {
+
   /* large Product */
   .description {
     font-size: 20px;
+  }
+
+  /* Cart*/
+  .cart-container {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+
+  /* Cart*/
+  .cart-container {
+    width: 65%;
   }
 }

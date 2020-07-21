@@ -15,11 +15,16 @@ class Cart extends React.Component {
       );
     }
     return (
-      <li key={key}>
-        <span>
-          {count} {product.name}
-          {formatPrice(count * product.price)}
-          <button onClick={() => this.props.deleteFromOrder(key)}>[x]</button>
+      <li  key={key}>
+        <span className="cart-item">
+          <div className="product-name">
+            {count} {product.name}
+          </div>
+          <div className="product-price">
+            {formatPrice(count * product.price)}
+            <button className="visitstore delete" onClick={() => this.props.deleteFromOrder(key)}>X</button>
+          </div>
+          <hr />
         </span>
       </li>
     );
@@ -37,6 +42,10 @@ class Cart extends React.Component {
     }, 0);
     return (
       <div className="cart-container closed">
+        <div>
+        <button  className="close-cart"onClick={() => this.props.closeCart()}>></button>
+        </div>
+        <div>
         <h2>Cart</h2>
         <ul>
           {orderIds.map(this.renderOrder)}
@@ -45,7 +54,7 @@ class Cart extends React.Component {
           Total:
           <strong>{formatPrice(total)}</strong>
         </div>
-        <button onClick={() => this.props.closeCart()}>[x] close cart</button>
+        </div>
       </div>
     )
   }

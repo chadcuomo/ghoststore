@@ -62,6 +62,11 @@ class App extends React.Component {
     cart.classList.add('closed');
   };
 
+  openCart = () => {
+    const cart = document.querySelector('.cart-container');
+    cart.classList.remove('closed');
+  };
+
   render() {
     return (
       <div className="main-container">
@@ -82,7 +87,7 @@ class App extends React.Component {
               />
               )}
         </Modal >
-        <Nav />
+        <Nav openCart={this.openCart}/>
         <div>
           <img src="/images/Ghost-Hero-image.jpg" alt="HERO" className="hero" />
         </div>
