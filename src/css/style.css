@@ -483,22 +483,63 @@ h4 {
   height: 100vh;
   position: fixed;
   right: 0;
-  z-index: 2;
+  z-index: 1;
   padding-left: 10px;
   border: 1px solid;
   padding: 10px;
   box-shadow: -3px 10px;
-  display: flex;
-  flex-wrap: wrap;
   overflow: scroll;
 }
 
+.product-edit {
+  margin-bottom: 20px;
+  border: 2px solid #000;
+  overflow: hidden;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-edit input,
+.product-edit textarea,
+.product-edit select {
+  width: 30%;
+  padding: 10px;
+  line-height: 1;
+  font-size: 1.2rem;
+  border: 0;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  background: #fff;
+}
+.product-edit input:focus,
+.product-edit textarea:focus,
+.product-edit select:focus {
+  outline: 0;
+  background: lightgrey;
+}
+.product-edit textarea {
+  width: 100%;
+}
+.product-edit input:last-of-type {
+  width: 100%;
+}
+.product-edit button {
+  width: 100%;
+  border: 0;
+}
 
 @media screen and (max-width: 1190px) {
-
   /*Cart*/
   .cart-container {
     width: 35%;
+  }
+
+  .inventory-container {
+    width: 65%;
   }
 }
 
@@ -536,6 +577,10 @@ h4 {
   .cart-container {
     width: 40%;
   }
+
+  .inventory-container {
+    width: 85%;
+  }
 }
 
 .large-price {
@@ -547,7 +592,6 @@ h4 {
 }
 
 @media screen and (max-width: 750px) {
-
   /* large Product */
   .description {
     font-size: 20px;
@@ -557,10 +601,13 @@ h4 {
   .cart-container {
     width: 55%;
   }
+
+  .inventory-container {
+    width: 95%;
+  }
 }
 
 @media screen and (max-width: 550px) {
-
   /* Cart*/
   .cart-container {
     width: 65%;

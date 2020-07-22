@@ -21,6 +21,7 @@ class Nav extends React.Component {
           alt="inventory" 
           className="navbutton" 
           src="/images/inventory.png"
+          onClick={() => this.props.openInventory()}
           />
         </div>
       </div>

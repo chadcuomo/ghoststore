@@ -23,7 +23,7 @@ class EditProductForm extends React.Component {
         </select>
         <textarea name="desc" onChange={this.handleChange} value={this.props.product.desc} />
         <input type="text" name="image" onChange={this.handleChange} value={this.props.product.image} />
-        <button onClick={() => this.props.deleteProduct(this.props.index)}>Remove Product</button>
+        <button className="visitstore" onClick={() => this.props.deleteProduct(this.props.index)}>Remove Product</button>
         </div>
     );
   }

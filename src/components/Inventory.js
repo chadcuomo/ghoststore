@@ -6,9 +6,9 @@ import EditProductForm from './EditProductForm';
 class Inventory extends React.Component {
   render() {
     return (
-      <div className="inventory-container">
+      <div className="inventory-container closed">
         <div>
-          <button>></button>
+          <button className="visitstore delete" onClick={() => this.props.closeInventory()}>></button>
         </div>
         <h2>Inventory</h2> 
         {Object.keys(this.props.products).map(key => 

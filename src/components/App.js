@@ -68,6 +68,16 @@ class App extends React.Component {
     cart.classList.remove('closed');
   };
 
+  closeInventory = () => {
+    const inventory = document.querySelector('.inventory-container');
+    inventory.classList.add('closed');
+  };
+
+  openInventory = () => {
+    const inventory = document.querySelector('.inventory-container');
+    inventory.classList.remove('closed');
+  };
+
   addProduct = (product) => {
     const products = { ...this.state.products };
     products[`product${Date.now()}`] = product;
@@ -100,6 +110,7 @@ class App extends React.Component {
         addProduct={this.addProduct}
         updateProduct={this.updateProduct}
         deleteProduct={this.deleteProduct}
+        closeInventory={this.closeInventory}
         />
         <Modal className="modal" isOpen={this.state.isOpen}>
         {Object.keys(this.state.largeProduct).map(key =>
@@ -112,7 +123,10 @@ class App extends React.Component {
               />
               )}
         </Modal >
-        <Nav openCart={this.openCart}/>
+        <Nav 
+        openCart={this.openCart}
+        openInventory={this.openInventory}
+        />
         <div>
           <img src="/images/Ghost-Hero-image.jpg" alt="HERO" className="hero" />
         </div>
