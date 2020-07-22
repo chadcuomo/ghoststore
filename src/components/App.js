@@ -4,6 +4,7 @@ import sampleProducts from '../sample-products';
 import SmallProduct from'./SmallProduct';
 import LargeProduct from './LargeProduct';
 import Cart from './Cart';
+import Inventory from './Inventory';
 import Modal from 'react-modal';
 
 
@@ -67,6 +68,24 @@ class App extends React.Component {
     cart.classList.remove('closed');
   };
 
+  addProduct = (product) => {
+    const products = { ...this.state.products };
+    products[`product${Date.now()}`] = product;
+    this.setState({ products });
+  };
+
+  updateProduct = (key, updatedProduct) => {
+    const products = { ...this.state.products };
+    products[key] = updatedProduct;
+    this.setState({ products }); 
+  }
+
+  deleteProduct = (key) => {
+    const products = { ...this.state.products };
+    delete products[key];
+    this.setState({ products });
+  }
+
   render() {
     return (
       <div className="main-container">
@@ -75,6 +94,12 @@ class App extends React.Component {
         order={this.state.order}
         deleteFromOrder={this.deleteFromOrder} 
         closeCart={this.closeCart}
+        />
+        <Inventory 
+        products={this.state.products}
+        addProduct={this.addProduct}
+        updateProduct={this.updateProduct}
+        deleteProduct={this.deleteProduct}
         />
         <Modal className="modal" isOpen={this.state.isOpen}>
         {Object.keys(this.state.largeProduct).map(key =>

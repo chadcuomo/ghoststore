@@ -463,12 +463,34 @@ h4 {
 .delete {
   width: 25px;
   margin-left: 10px;
+  margin-top: -3px;
 }
 
 .closed {
   transition-timing-function: ease-out;
   transition: 1s;
   transform: translateX(120%);
+}
+
+/*Inventory*/
+.inventory-container {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  width: 50%;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  z-index: 2;
+  padding-left: 10px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: -3px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
 }
 
 
