@@ -7,6 +7,7 @@ import Cart from './Cart';
 import Inventory from './Inventory';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
+import base from '../base';
 
 
 Modal.setAppElement('#root');
@@ -28,13 +29,23 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    this.loadSampleProducts();
+    console.log('mounted');
     const { params } = this.props.match;
     const localStorageRef = localStorage.getItem(params.storeId);
     if(localStorageRef) {
       this.setState({ order: JSON.parse(localStorageRef) })
     }
+    this.ref = base.syncState(`${params.storeId}/products`, {
+      context: this,
+      state: 'products'
+    });
+    this.loadSampleProducts();
   };
+  
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);    
+}
 
   componentDidUpdate() {
     localStorage.setItem(
@@ -109,7 +120,8 @@ class App extends React.Component {
 
   deleteProduct = (key) => {
     const products = { ...this.state.products };
-    delete products[key];
+    products[key] = null;
+    console.log('deleting')
     this.setState({ products });
   }
 
