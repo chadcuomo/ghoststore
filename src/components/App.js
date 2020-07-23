@@ -6,6 +6,7 @@ import LargeProduct from './LargeProduct';
 import Cart from './Cart';
 import Inventory from './Inventory';
 import Modal from 'react-modal';
+import PropTypes from 'prop-types';
 
 
 Modal.setAppElement('#root');
@@ -18,12 +19,28 @@ class App extends React.Component {
     order: {}
   };
 
+  static propTypes = {
+    match: PropTypes.object
+  };
+
   loadSampleProducts = () => {
     this.setState({ products: sampleProducts });
   };
 
   componentDidMount() {
     this.loadSampleProducts();
+    const { params } = this.props.match;
+    const localStorageRef = localStorage.getItem(params.storeId);
+    if(localStorageRef) {
+      this.setState({ order: JSON.parse(localStorageRef) })
+    }
+  };
+
+  componentDidUpdate() {
+    localStorage.setItem(
+      this.props.match.params.storeId,
+      JSON.stringify(this.state.order)
+    );
   };
 
   openModal = (key) => {
@@ -112,7 +129,10 @@ class App extends React.Component {
         deleteProduct={this.deleteProduct}
         closeInventory={this.closeInventory}
         />
-        <Modal className="modal" isOpen={this.state.isOpen}>
+        <Modal 
+        className="modal" 
+        isOpen={this.state.isOpen}
+        >
         {Object.keys(this.state.largeProduct).map(key =>
               <LargeProduct
               key={key}
