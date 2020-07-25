@@ -134,13 +134,19 @@ class App extends React.Component {
         deleteFromOrder={this.deleteFromOrder} 
         closeCart={this.closeCart}
         />
+        <div className="inventory-container closed">
+        <div>
+          <button className="visitstore delete" onClick={() => this.closeInventory()}>></button>
+        </div>
         <Inventory 
         products={this.state.products}
         addProduct={this.addProduct}
         updateProduct={this.updateProduct}
         deleteProduct={this.deleteProduct}
         closeInventory={this.closeInventory}
+        storeId={this.props.match.params.storeId}
         />
+        </div>
         <Modal 
         className="modal" 
         isOpen={this.state.isOpen}
