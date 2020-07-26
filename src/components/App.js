@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import base from '../base';
 
 
+
 Modal.setAppElement('#root');
 
 class App extends React.Component {
@@ -27,6 +28,8 @@ class App extends React.Component {
   loadSampleProducts = () => {
     this.setState({ products: sampleProducts });
   };
+
+ 
 
   componentDidMount() {
     console.log('mounted');
