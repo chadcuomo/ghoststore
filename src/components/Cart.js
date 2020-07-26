@@ -15,8 +15,8 @@ class Cart extends React.Component {
       );
     }
     return (
-      <li  key={key}>
-        <span className="cart-item">
+      <li  className="cart-item" key={key}>
+        <span>
           <div className="product-name">
             {count} {product.name}
           </div>

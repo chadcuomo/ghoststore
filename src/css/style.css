@@ -483,6 +483,12 @@ h4 {
   transform: translateX(120%);
 }
 
+.open {
+  transition-timing-function: ease-in;
+  transition: 1s;
+  transform: translateX(0%);
+}
+
 /*Inventory*/
 .inventory-container {
   font-family: "Roboto", sans-serif;
@@ -549,8 +555,76 @@ h4 {
   border: 0;
 }
 
-@media screen and (max-width: 1190px) {
+/* Login */
 
+.login {
+  width: 90%;
+  margin: auto;
+}
+
+.logout-button {
+  height: 35px;
+  width: 125px;
+  background: black;
+  font-family: "Anton", sans-serif;
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 5px;
+  border: none;
+}
+
+.logout-button:hover {
+  color: black;
+  background: white;
+  border: black solid 2px;
+}
+
+button.github,
+input[type="submit"].github,
+button.facebook,
+input[type="submit"].facebook,
+button.twitter,
+input[type="submit"].twitter {
+  border: 0;
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+  color: #fff;
+  padding: 2rem;
+}
+
+button.github,
+input[type="submit"].github {
+  background: #82d465;
+}
+
+button.github:hover,
+input[type="submit"].github:hover {
+  background: #5cc437;
+}
+
+button.facebook,
+input[type="submit"].facebook {
+  background: #3864a3;
+}
+
+button.facebook:hover,
+input[type="submit"].facebook:hover {
+  background: #2d5082;
+}
+
+button.twitter,
+input[type="submit"].twitter {
+  background: #5ea9dd;
+}
+
+button.twitter:hover,
+input[type="submit"].twitter:hover {
+  background: #2c8dd0;
+}
+
+@media screen and (max-width: 1190px) {
   /*Cart*/
   .cart-container {
     width: 35%;
@@ -610,7 +684,6 @@ h4 {
 }
 
 @media screen and (max-width: 750px) {
-
   /* large Product */
   .description {
     font-size: 20px;
@@ -627,7 +700,6 @@ h4 {
 }
 
 @media screen and (max-width: 550px) {
-
   /* Cart*/
   .cart-container {
     width: 65%;

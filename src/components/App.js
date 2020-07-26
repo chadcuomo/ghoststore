@@ -65,6 +65,7 @@ class App extends React.Component {
 
   closeModal = (key) => {
     const largeProduct = { ...this.state.largeProduct };
+    console.log(largeProduct[key]);
     delete largeProduct[key];
     this.setState({ largeProduct })
     let isOpen = { ...this.state.isOpen };
@@ -78,6 +79,7 @@ class App extends React.Component {
     order[key] = order[key] + 1 || 1;
     this.setState({ order });
     cart.classList.remove('closed');
+    cart.classList.add('open');
   };
 
   deleteFromOrder = (key) => {
@@ -88,22 +90,26 @@ class App extends React.Component {
 
   closeCart = () => {
     const cart = document.querySelector('.cart-container');
+    cart.classList.remove('open');
     cart.classList.add('closed');
   };
 
   openCart = () => {
     const cart = document.querySelector('.cart-container');
     cart.classList.remove('closed');
+    cart.classList.add('open');
   };
 
   closeInventory = () => {
     const inventory = document.querySelector('.inventory-container');
     inventory.classList.add('closed');
+    inventory.classList.remove('open');
   };
 
   openInventory = () => {
     const inventory = document.querySelector('.inventory-container');
     inventory.classList.remove('closed');
+    inventory.classList.add('open');
   };
 
   addProduct = (product) => {
@@ -135,17 +141,17 @@ class App extends React.Component {
         closeCart={this.closeCart}
         />
         <div className="inventory-container closed">
-        <div>
-          <button className="visitstore delete" onClick={() => this.closeInventory()}>></button>
-        </div>
-        <Inventory 
-        products={this.state.products}
-        addProduct={this.addProduct}
-        updateProduct={this.updateProduct}
-        deleteProduct={this.deleteProduct}
-        closeInventory={this.closeInventory}
-        storeId={this.props.match.params.storeId}
-        />
+          <div>
+            <button className="visitstore delete" onClick={() => this.closeInventory()}>></button>
+          </div>
+          <Inventory 
+          products={this.state.products}
+          addProduct={this.addProduct}
+          updateProduct={this.updateProduct}
+          deleteProduct={this.deleteProduct}
+          closeInventory={this.closeInventory}
+          storeId={this.props.match.params.storeId}
+          />
         </div>
         <Modal 
         className="modal" 
