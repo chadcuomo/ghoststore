@@ -43,7 +43,7 @@ class Cart extends React.Component {
     return (
       <div className="cart-container closed">
         <div>
-        <button  className="close-cart"onClick={() => this.props.closeCart()}>></button>
+        <button  className="visitstore delete"onClick={() => this.props.closeCart()}>></button>
         </div>
         <div>
         <h2>Cart</h2>

@@ -26,6 +26,7 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: -15px;
+  width: 90%;
 }
 
 .storefrontform {
@@ -35,6 +36,7 @@ h2 {
   text-align: center;
   grid-template-columns: 100%;
   justify-items: center;
+  width: auto;
 }
 
 .storename {
@@ -115,6 +117,7 @@ h2 {
   margin-bottom: 0px;
   padding-top: 10px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   top: 0;
   position: sticky;
@@ -433,7 +436,7 @@ h4 {
   background-color: white;
   color: black;
   width: 25%;
-  height: 100vh;
+  height: auto;
   position: fixed;
   right: 0;
   z-index: 2;
@@ -442,14 +445,13 @@ h4 {
   padding: 10px;
   box-shadow: -3px 10px;
   display: flex;
-  flex-wrap: wrap;
   margin-top: 20px;
 }
 
 .close-cart {
   height: 100vh;
   width: 25px;
-  margin-right: 10px;
+  margin-right: auto;
   margin-left: -5px;
   background: white;
   font-family: "Anton", sans-serif;
@@ -625,6 +627,7 @@ input[type="submit"].twitter:hover {
 }
 
 @media screen and (max-width: 1190px) {
+
   /*Cart*/
   .cart-container {
     width: 35%;
@@ -667,7 +670,7 @@ input[type="submit"].twitter:hover {
 
   /*Cart*/
   .cart-container {
-    width: 40%;
+    width: 50%;
   }
 
   .inventory-container {
@@ -684,6 +687,7 @@ input[type="submit"].twitter:hover {
 }
 
 @media screen and (max-width: 750px) {
+
   /* large Product */
   .description {
     font-size: 20px;
@@ -700,8 +704,95 @@ input[type="submit"].twitter:hover {
 }
 
 @media screen and (max-width: 550px) {
+
   /* Cart*/
   .cart-container {
-    width: 65%;
+    width: 85%;
   }
+
+  .navbutton {
+    margin-top: 40px;
+    margin-right: 5px;
+    padding: 5px;
+    height: 20px;
+    width: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .small-product-outer {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 348px) {
+
+  /*Store Front */
+  .storename {
+    width: 260px;
+  }
+
+  .visitstore {
+    width: 260px;
+  }
+
+  .delete {
+    width: 25px;
+  }
+
+  /* Nav */
+  .nav {
+    margin-top: -30px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    top: 0;
+    position: sticky;
+    width: 100%;
+    height: auto;
+    background: black;
+    z-index: 1;
+  }
+
+  .emptynav {
+    width: 0;
+  }
+
+  .navlogo {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 80%;
+    text-align: center;
+  }
+
+  .navimg {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
+  .navbutton {
+    margin-top: -5px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+    height: 25px;
+    width: 25px;
+  }
+
+  /*Cart*/
+  .cart-container {
+    width: 95%;
+    font-size: 12px;
+  }
+
+  .small-product-outer {
+    width: 225px;
+  }
+
+
 }
